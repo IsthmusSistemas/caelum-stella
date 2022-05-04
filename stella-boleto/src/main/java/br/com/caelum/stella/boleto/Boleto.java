@@ -454,6 +454,14 @@ public class Boleto implements Serializable {
     return this.banco.getAgenciaECodigoBeneficiario(this.beneficiario);
   }
 
+  /**
+   * @return agencia e conta do banco
+   */
+  public String getAgenciaEConta() {
+    return this.banco.getAgenciaEConta(this.beneficiario);
+  }
+
+
   public Boleto comNossoNumeroECodDocumento(String nossoNumeroECodDocumento) {
     this.nossoNumeroECodDocumento = nossoNumeroECodDocumento;
     return this;

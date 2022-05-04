@@ -60,8 +60,8 @@
 	<field name="valorCobrado" class="java.math.BigDecimal">
 		<fieldDescription><![CDATA[valorCobrado]]></fieldDescription>
 	</field>
-	<field name="agenciaECodigoBeneficiario" class="java.lang.String">
-		<fieldDescription><![CDATA[agenciaECodigoBeneficiario]]></fieldDescription>
+	<field name="agenciaEConta" class="java.lang.String">
+		<fieldDescription><![CDATA[agenciaEConta]]></fieldDescription>
 	</field>
 	<field name="nossoNumeroECodDocumento" class="java.lang.String">
 		<fieldDescription><![CDATA[nossoNumeroECodDocumento]]></fieldDescription>
@@ -248,7 +248,7 @@
 					<topPen lineWidth="0.0"/>
 					<bottomPen lineWidth="0.0"/>
 				</box>
-				<text><![CDATA[Agência / Código do Beneficiário]]></text>
+				<text><![CDATA[Agência / Conta]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Celula" x="178" y="330" width="177" height="10" uuid="2d90e325-2061-45a5-bea0-5eea21ec8c25"/>
@@ -281,7 +281,7 @@
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{agenciaECodigoBeneficiario}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{agenciaEConta}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="Txt_Normal" x="178" y="340" width="177" height="16" uuid="0a386697-5190-4930-a3e4-dada92f6d225"/>
@@ -533,7 +533,7 @@
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<bottomPen lineWidth="0.0"/>
 				</box>
-				<text><![CDATA[Agência / Código do Beneficiário]]></text>
+				<text><![CDATA[Agência / Conta]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement style="Txt_valor" x="390" y="582" width="164" height="14" uuid="e14e0139-d56b-482b-a7b5-9b3d76907a52"/>
@@ -635,7 +635,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{agenciaECodigoBeneficiario}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{agenciaEConta}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement style="Celula" x="300" y="452" width="90" height="10" uuid="f030d527-74ed-46e3-9165-eb498cb0d8e7"/>

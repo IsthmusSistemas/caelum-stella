@@ -37,4 +37,15 @@ public abstract class AbstractBanco implements Banco {
 		return builder.toString();
 	}
 
+	@Override
+	public String getAgenciaEConta(Beneficiario beneficiario) {
+		StringBuilder builder = new StringBuilder();
+		builder.append(beneficiario.getAgenciaFormatada());
+		builder.append(prefixNotNullStringOrDefault(beneficiario.getDigitoAgencia(), "", "-"));
+		builder.append("/");
+		builder.append(beneficiario.getConta());
+		builder.append(prefixNotNullStringOrDefault(beneficiario.getDigitoConta(), "", "-"));
+		return builder.toString();
+	}
+
 }

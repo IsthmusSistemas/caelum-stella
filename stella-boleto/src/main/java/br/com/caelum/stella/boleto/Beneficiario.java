@@ -11,6 +11,9 @@ public class Beneficiario implements Serializable {
 	private String agencia;
 	private String digitoAgencia;
 
+	private String conta;
+	private String digitoConta;
+	
 	private String codigoBeneficiario;
 	private String digitoCodigoBeneficiario;
 
@@ -44,6 +47,25 @@ public class Beneficiario implements Serializable {
 		return this;
 	}
 
+
+	public String getConta() {
+		return conta;
+	}
+
+	public Beneficiario comConta(String conta) {
+		this.conta = conta;
+		return this;
+	}
+
+	public String getDigitoConta() {
+		return digitoConta;
+	}
+
+	public Beneficiario comDigitoConta(String digitoConta) {
+		this.digitoConta = digitoConta;
+		return this;
+	}
+	
 	public String getDigitoAgencia() {
 		return digitoAgencia;
 	}
