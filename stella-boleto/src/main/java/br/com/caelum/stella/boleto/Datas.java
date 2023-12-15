@@ -20,7 +20,7 @@ public class Datas implements Serializable {
 	private Calendar processamento;
 	private Calendar vencimento;
 	private static final Calendar MINIMUM_DATE = new GregorianCalendar(1997, 10, 7);
-	private static final Calendar MAXIMUM_DATE = new GregorianCalendar(2024, 1, 1);
+	private static final Calendar MAXIMUM_DATE = new GregorianCalendar(2222, 1, 1);
 
 	private Datas() {
 	}
