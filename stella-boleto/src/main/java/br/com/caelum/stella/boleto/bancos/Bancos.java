@@ -48,12 +48,15 @@ public enum Bancos {
 			return new Santander();
 		}
 	},
-
 	BANRISUL("041", "Banrisul") {
 		@Override
 		public Banco getBanco() {
 			return new Banrisul();
 		}
+	},
+	SICREDI("748", "Sicredi") {
+		@Override
+		public Banco getBanco() { return new Sicredi();	}
 	};
 
 	private final String numeroDoBanco;
