@@ -45,6 +45,8 @@ public class Boleto implements Serializable {
   protected String linhaDigitavel;
   protected String codigoBarras;
   protected String nossoNumeroECodDocumento;
+  protected String destacarBoletoST;
+  protected String cip;
 
   protected Boleto() {
   }
@@ -582,5 +584,44 @@ public class Boleto implements Serializable {
    */
   public String getLocalDePagamento() {
     return locaisDePagamento.isEmpty() ? "" : locaisDePagamento.get(0);
+  }
+
+  /**
+   * Destaca boleto ST
+   *
+   * @return se sera destacado boleto ST
+   */
+  public String getDestacarBoletoST(){
+    return this.destacarBoletoST;
+  }
+
+  /**
+   * Informa se sera destacado no boleto a informaçao boleto ST
+   *
+   * @param destacarBoletoST true ou false
+   * @return this
+   */
+  public Boleto comDestacarBoletoST(String destacarBoletoST){
+    this.destacarBoletoST = destacarBoletoST;
+    return this;
+  }
+
+  /**
+   * CIP
+   *
+   * @return CIP
+   */
+  public String getCip(){
+    return this.cip;
+  }
+
+  /**
+   * Informaçao do CIP
+   *
+   * @return this
+   */
+  public Boleto comCip(String cip){
+    this.cip = cip;
+    return this;
   }
 }
