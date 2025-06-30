@@ -57,6 +57,18 @@ public enum Bancos {
 	SICREDI("748", "Sicredi") {
 		@Override
 		public Banco getBanco() { return new Sicredi();	}
+	},
+	SICOOB("756", "Sicoob") {
+		@Override
+		public Banco getBanco() { return new Sicoob();	}
+	},
+	SOFISA("637", "Sofisa") {
+		@Override
+		public Banco getBanco() { return new Sofisa();	}
+	},
+	BANCOABC("246", "Banco ABC") {
+		@Override
+		public Banco getBanco() { return new BancoAbc();	}
 	};
 
 	private final String numeroDoBanco;

@@ -16,6 +16,7 @@ public class Pagador implements Serializable {
     private String nome = "";
     private String documento = "";
     private Endereco endereco = Endereco.novoEndereco();
+    private String cliente = "";
 
     private Pagador() {
     }
@@ -86,6 +87,24 @@ public class Pagador implements Serializable {
      */
     public Pagador comEndereco(Endereco endereco) {
         this.endereco = endereco;
+        return this;
+    }
+
+    /**
+     * Devolve o codigo do cliente
+     * @return codigo do cliente
+     */
+    public String getCliente() {
+        return this.cliente;
+    }
+
+    /**
+     * Associa um codigo de cliente
+     * @param cliente codigo do cliente
+     * @return this
+     */
+    public Pagador comCliente(String cliente) {
+        this.cliente = cliente;
         return this;
     }
 }
