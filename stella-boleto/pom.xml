@@ -11,6 +11,20 @@
 	<packaging>jar</packaging>
 	<name>Stella Boleto</name>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jaspersoft-artifactory</id>
+			<url>https://jaspersoft.jfrog.io/artifactory/third-party-ce-artifacts/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>jaspersoft-artifactory</id>
+			<url>https://jaspersoft.jfrog.io/artifactory/third-party-ce-artifacts/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 	    <!-- Boleto PDF, PNG e HTML -->
 		<dependency>
