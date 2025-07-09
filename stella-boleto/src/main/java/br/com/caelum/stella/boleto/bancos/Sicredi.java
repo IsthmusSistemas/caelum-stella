@@ -3,6 +3,8 @@ package br.com.caelum.stella.boleto.bancos;
 import br.com.caelum.stella.boleto.Banco;
 import br.com.caelum.stella.boleto.Beneficiario;
 import br.com.caelum.stella.boleto.Boleto;
+
+import static br.com.caelum.stella.boleto.bancos.Bancos.SICREDI;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 
 /**
@@ -19,9 +21,7 @@ public class Sicredi extends AbstractBanco implements Banco {
     private static final long serialVersionUID = 1L;
 
 
-    private static final String NUMERO_SICREDI = "748";
-
-    private static final String DIGITO_NUMERO_SICREDI = "X";
+    private static final String NUMERO_SICREDI = SICREDI.getNumeroDoBanco();
 
     @Override
     public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -37,9 +37,7 @@ public class Sicredi extends AbstractBanco implements Banco {
 
     @Override
     public String getNumeroFormatadoComDigito() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(getNumeroFormatado()).append("-");
-        return builder.append(DIGITO_NUMERO_SICREDI).toString();
+        return  DigitoBanco.getNumeroFormatadoComDigito(NUMERO_SICREDI);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package br.com.caelum.stella.boleto.bancos;
 
+import static br.com.caelum.stella.boleto.bancos.Bancos.SANTANDER;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 
 import java.net.URL;
@@ -13,8 +14,7 @@ public class Santander extends AbstractBanco {
 
 	private static final long serialVersionUID = 1L;
 
-	private final static String NUMERO_SANTANDER = "033";
-	private final static String DIGITO_SANTANDER = "7";
+	private final static String NUMERO_SANTANDER = SANTANDER.getNumeroDoBanco();
 	private GeradorDeDigitoSantander gdivSantander = new GeradorDeDigitoSantander();
 
 	@Override
@@ -60,9 +60,7 @@ public class Santander extends AbstractBanco {
 
 	@Override
 	public String getNumeroFormatadoComDigito() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(NUMERO_SANTANDER).append("-");
-		return builder.append(DIGITO_SANTANDER).toString();
+		return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_SANTANDER);
 	}
 
 	@Override

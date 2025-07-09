@@ -4,6 +4,8 @@ import br.com.caelum.stella.boleto.Banco;
 import br.com.caelum.stella.boleto.Beneficiario;
 import br.com.caelum.stella.boleto.Boleto;
 import br.com.caelum.stella.boleto.exception.CriacaoBoletoException;
+
+import static br.com.caelum.stella.boleto.bancos.Bancos.BANCO_DO_BRASIL;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 
 /**
@@ -16,14 +18,12 @@ public class BancoDoBrasil extends AbstractBanco implements Banco {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String NUMERO_BB = "001";
-	private static final String DIGITO_NUMERO_BB = "9";
+	private static final String NUMERO_BB = BANCO_DO_BRASIL.getNumeroDoBanco();
 	private static final String CARTEIRA_16 = "16";
 	private static final String CARTEIRA_17 = "17";
 	private static final String CARTEIRA_18 = "18";
 	private static final String ZEROS_CONVENIOS_NOVOS = "000000";
 	private static final String TIPO_MODALIDADE_COBRANCA_CARTEIRA_SEM_REGISTRO = "21";
-
 
 	@Override
 	public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -105,7 +105,7 @@ public class BancoDoBrasil extends AbstractBanco implements Banco {
 
 	@Override
 	public String getNumeroFormatadoComDigito() {
-		return NUMERO_BB + "-" + DIGITO_NUMERO_BB;
+		return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_BB);
 	}
 
 	@Override

@@ -14,14 +14,13 @@ public class HSBC extends AbstractBanco implements Banco {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String NUMERO_HSBC = "399";
-	private static final String DIGITO_HSBC = "9";
+	private static final String NUMERO_HSBC = Bancos.HSBC.getNumeroDoBanco();
 	private static final String CODIGO_APLICATIVO = "2";
 	private static final String CARTEIRA_NAO_REGISTRADA = "CNR";
 
 	@Override
 	public String getNumeroFormatadoComDigito() {
-		return NUMERO_HSBC + "-" + DIGITO_HSBC;
+		return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_HSBC);
 	}
 
 	@Override

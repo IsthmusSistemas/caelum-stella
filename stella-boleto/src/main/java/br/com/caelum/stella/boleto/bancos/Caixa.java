@@ -5,6 +5,8 @@ import java.net.URL;
 import br.com.caelum.stella.boleto.Banco;
 import br.com.caelum.stella.boleto.Beneficiario;
 import br.com.caelum.stella.boleto.Boleto;
+
+import static br.com.caelum.stella.boleto.bancos.Bancos.CAIXA;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 import static java.lang.String.format;
 
@@ -12,8 +14,7 @@ public class Caixa extends AbstractBanco implements Banco {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String NUMERO_CAIXA = "104";
-	private static final String DIGITO_CAIXA = "0";
+	private static final String NUMERO_CAIXA = CAIXA.getNumeroDoBanco();
 
 	@Override
 	public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -54,9 +55,7 @@ public class Caixa extends AbstractBanco implements Banco {
 
 	@Override
 	public String getNumeroFormatadoComDigito() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(getNumeroFormatado()).append("-");
-		return builder.append(DIGITO_CAIXA).toString();
+		return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_CAIXA);
 	}
 
 	@Override
