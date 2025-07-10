@@ -3,6 +3,8 @@ package br.com.caelum.stella.boleto.bancos;
 import br.com.caelum.stella.boleto.Banco;
 import br.com.caelum.stella.boleto.Beneficiario;
 import br.com.caelum.stella.boleto.Boleto;
+
+import static br.com.caelum.stella.boleto.bancos.Bancos.BANCOABC;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 
 /**
@@ -17,9 +19,7 @@ public class BancoAbc extends AbstractBanco implements Banco {
     private static final long serialVersionUID = 1L;
 
 
-    private static final String NUMERO_BANCOABC = "246";
-
-    private static final String DIGITO_NUMERO_BANCOABC = "X";
+    private static final String NUMERO_BANCOABC = BANCOABC.getNumeroDoBanco();
 
     @Override
     public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -35,9 +35,7 @@ public class BancoAbc extends AbstractBanco implements Banco {
 
     @Override
     public String getNumeroFormatadoComDigito() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(getNumeroFormatado()).append("-");
-        return builder.append(DIGITO_NUMERO_BANCOABC).toString();
+        return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_BANCOABC);
     }
 
     @Override

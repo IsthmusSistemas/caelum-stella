@@ -6,6 +6,7 @@ import br.com.caelum.stella.boleto.Boleto;
 
 import java.net.URL;
 
+import static br.com.caelum.stella.boleto.bancos.Bancos.BANRISUL;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 
 /**
@@ -14,8 +15,7 @@ import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZer
 public class Banrisul extends AbstractBanco implements Banco {
 
   private static final long serialVersionUID = 1L;
-  private static final String NUMERO_BANRISUL = "041";
-  private static final String DIGITO_BANRISUL = "0";
+  private static final String NUMERO_BANRISUL = BANRISUL.getNumeroDoBanco();
 
   @Override
   public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -31,9 +31,7 @@ public class Banrisul extends AbstractBanco implements Banco {
 
   @Override
   public String getNumeroFormatadoComDigito() {
-    StringBuilder builder = new StringBuilder();
-    builder.append(getNumeroFormatado()).append("-");
-    return builder.append(NUMERO_BANRISUL).toString();
+    return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_BANRISUL);
   }
 
   @Override

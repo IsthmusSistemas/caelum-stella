@@ -1,5 +1,6 @@
 package br.com.caelum.stella.boleto.bancos;
 
+import static br.com.caelum.stella.boleto.bancos.Bancos.ITAU;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.prefixNotNullStringOrDefault;
 
@@ -13,8 +14,7 @@ public class Itau extends AbstractBanco implements Banco {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String NUMERO_ITAU = "341";
-	private static final String DIGITO_ITAU = "7";
+	private static final String NUMERO_ITAU = ITAU.getNumeroDoBanco();
 
 	@Override
 	public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -33,9 +33,7 @@ public class Itau extends AbstractBanco implements Banco {
 
 	@Override
 	public String getNumeroFormatadoComDigito() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(getNumeroFormatado()).append("-");
-		return builder.append(DIGITO_ITAU).toString();
+		return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_ITAU);
 	}
 
 	@Override

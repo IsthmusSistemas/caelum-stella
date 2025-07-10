@@ -3,6 +3,8 @@ package br.com.caelum.stella.boleto.bancos;
 import br.com.caelum.stella.boleto.Banco;
 import br.com.caelum.stella.boleto.Beneficiario;
 import br.com.caelum.stella.boleto.Boleto;
+
+import static br.com.caelum.stella.boleto.bancos.Bancos.SOFISA;
 import static br.com.caelum.stella.boleto.utils.StellaStringUtils.leftPadWithZeros;
 
 /**
@@ -17,9 +19,7 @@ public class Sofisa extends AbstractBanco implements Banco {
     private static final long serialVersionUID = 1L;
 
 
-    private static final String NUMERO_SOFISA = "637";
-
-    private static final String DIGITO_NUMERO_SOFISA = "X";
+    private static final String NUMERO_SOFISA = SOFISA.getNumeroDoBanco();
 
     @Override
     public String geraCodigoDeBarrasPara(Boleto boleto) {
@@ -35,9 +35,7 @@ public class Sofisa extends AbstractBanco implements Banco {
 
     @Override
     public String getNumeroFormatadoComDigito() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(getNumeroFormatado()).append("-");
-        return builder.append(DIGITO_NUMERO_SOFISA).toString();
+        return DigitoBanco.getNumeroFormatadoComDigito(NUMERO_SOFISA);
     }
 
     @Override
